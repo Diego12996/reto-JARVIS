@@ -31,19 +31,17 @@ function UsersTable() {
             </tr>
           </thead>
           <tbody>
-            <>
-              { usersOrderAge.map((user, index) => (
-                <tr key={index} className="table-info">
-                  <td>{user.name.first}</td>
-                  <td>{user.name.last}</td>
-                  <td>{ user.dob.age}</td>
-                  <td>{ user.gender }</td>
-                  <td>{ user.email }</td>
-                  <td>{ user.nat}</td>
-                  <td><img src={user.picture.thumbnail} alt="user" /></td>
-                </tr>
-              ))}
-            </>
+            { usersOrderAge.map((user, index) => (
+              <tr key={index} className="table-info">
+                <td>{user.name.first}</td>
+                <td>{user.name.last}</td>
+                <td>{ user.dob.age}</td>
+                <td>{ user.gender }</td>
+                <td>{ user.email }</td>
+                <td>{ user.nat}</td>
+                <td><img src={user.picture.thumbnail} alt="user" /></td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </>
@@ -52,12 +50,14 @@ function UsersTable() {
 
   return (
     <>
-        <Button color="primary" style={{margin: "1rem"}}>
+      <Button
+        style={{margin: "1rem"}}
+        color="primary"
+        href="https://randomuser.me/api/?results=25&format=csv&dl _"
+        tag="a"
+      >
         Download CSV
-          <a href="https://randomuser.me/api/?results=25&nat=gb,us,es&format=csv&dl">
-                  f
-          </a>
-        </Button>
+      </Button>
       <ListUsers />
     </>
   )
